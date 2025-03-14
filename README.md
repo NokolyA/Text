@@ -1,21 +1,38 @@
-iBBB,         
-     iBQi      BQBi       cc,       
-     BBQc      QBBQ;     BQBQ,      
-     HBQBQ:    BQBi      cQBQB      
-    ,QBQBQ    QBQB7     QBQBk      
-    nBBQBI    BQBQI    7BQBQ,   igS,  
-     BQQBB    QQBBk    BQBQ1    lBQBi  
-    ,BQQQb    BQBBX    iQQQB    CBQBQ  
-      TBBBQBQBBBQiBQQB;  7BQBQ:     
-          QBQBQBQBQBQBQ, iBQQk      
-          8QBQBQBQBQBQBQBQg       
-          QBQBQBQBQBQBQBQ8       
-        x.BQBQBQBQBQBQBQBQBQ       
-      ,QBQBQBQBQBQBQBQBQBQBQ:     
-     cQBQBQBQBQBQBQBQBQBQBQ      
-    IBQBQBQBQBQBQBQBQBQBQq       
-   ; BQBQBQBQBQBQBQBQBQBQT      
-    HQBQBQBQBQBQBQBQBQBQ       
-    :QBQBQBQBQBQBQBQBQk       
-    vBQBQBQBQBQBQO.       
-   ;; 1bBQBEC:
+Задание 3
+
+Дано:
+Размер файла = 40 Мбайт
+Сжатый размер = 40% от исходного размера = 40 * 0,4 = 16 Мбайт
+Скорость передачи = 2²⁰ бит/с
+Время на сжатие = 10 с
+Время на распаковку = 2 с
+
+Решение:
+
+1. Переведём сжатый размер в биты:
+16 * 1024 * 1024 * 8 = 134217728 бит
+
+
+2. Скорость передачи = 2²⁰ = 1048576 бит/с
+
+
+3. Время передачи сжатого файла = 134217728 / 1048576 = 128 с
+
+
+4. Время способа А = 128 + 10 + 2 = 140 с
+
+
+5. Переведём исходный размер файла в биты:
+40 * 1024 * 1024 * 8 = 335544320 бит
+
+
+6. Время передачи без сжатия = 335544320 / 1048576 = 320 с
+
+
+7. Разница = 320 - 140 = 180 с
+
+
+
+Ответ: А180
+
+
