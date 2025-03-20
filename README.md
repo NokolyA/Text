@@ -1,23 +1,16 @@
-# Ввод данных
-day = int(input())
-current_weight = float(input())
+# Ввод 4 слов
+words = [input().strip() for _ in range(4)]
 
-# Исходные данные
-start_weight = 100
-target_weight = 88
-total_days = 60
+# Находим самую "маленькую" и самую "большую" строки
+smallest = min(words)
+largest = max(words)
 
-# Суточная норма похудения
-daily_loss = (start_weight - target_weight) / total_days
+# Определяем Unicode-коды последних символов этих строк
+code_smallest = ord(smallest[-1])
+code_largest = ord(largest[-1])
 
-# Целевой вес на текущий день
-target_today = start_weight - daily_loss * day
+# Вычисляем "волшебное" число
+magic_number = (code_smallest * code_largest) ** 2
 
-# Проверка выполнения плана
-if current_weight <= target_today:
-    print("Все идет по плану")
-else:
-    print("Что-то пошло не так")
-
-# Вывод информации о текущем дне
-print(f"#{day} ДЕНЬ: ТЕКУЩИЙ ВЕС = {current_weight} кг, ЦЕЛЬ по ВЕСУ = {target_today:.1f} кг")
+# Вывод результата
+print(magic_number)
