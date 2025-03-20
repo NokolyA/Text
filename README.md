@@ -1,15 +1,8 @@
-import re
+# Ввод трех слов
+words = [input().strip() for _ in range(3)]
 
-# Ввод строк
-s1 = input()
-s2 = input()
+# Сортировка по возрастанию
+words.sort()
 
-# Удаляем все небуквенные символы и приводим к нижнему регистру
-cleaned_s1 = re.sub(r'[^a-zA-Zа-яА-Я]', '', s1).lower()
-cleaned_s2 = re.sub(r'[^a-zA-Zа-яА-Я]', '', s2).lower()
-
-# Сравниваем строки
-if cleaned_s1 == cleaned_s2:
-    print("YES")
-else:
-    print("NO")
+# Вывод результата
+print(' '.join(words))
