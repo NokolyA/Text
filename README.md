@@ -1,16 +1,15 @@
-# Ввод 4 слов
-words = [input().strip() for _ in range(4)]
+# Ввод количества названий классов
+n = int(input())
 
-# Находим самую "маленькую" и самую "большую" строки
-smallest = min(words)
-largest = max(words)
+# Допустимые значения
+valid_numbers = set(str(i) for i in range(10))
+valid_letters = set('АБВГДЕЖЗИЙКЛМНОП')
 
-# Определяем Unicode-коды последних символов этих строк
-code_smallest = ord(smallest[-1])
-code_largest = ord(largest[-1])
-
-# Вычисляем "волшебное" число
-magic_number = (code_smallest * code_largest) ** 2
-
-# Вывод результата
-print(magic_number)
+# Проверка каждого названия
+for _ in range(n):
+    class_name = input().strip()
+    
+    if len(class_name) == 2 and class_name[0] in valid_numbers and class_name[1] in valid_letters:
+        print("YES")
+    else:
+        print("NO")
