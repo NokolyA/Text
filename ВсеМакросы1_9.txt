@@ -1,0 +1,108 @@
+
+Sub Tablica()
+    ' Макрос создает таблицу 3х3
+    Dim tbl As Table
+    Set tbl = ActiveDocument.Tables.Add(Selection.Range, 3, 3)
+End Sub
+
+Sub Макрос1()
+    ' Вывод фамилии, имени, отчества
+    Selection.TypeText Text:="Иванов Иван Иванович"
+End Sub
+
+Sub Макрос2()
+    ' Вставка таблицы 5х5 с произвольным стилем
+    Dim tbl As Table
+    Set tbl = ActiveDocument.Tables.Add(Selection.Range, 5, 5)
+    tbl.Style = "Сетка таблицы"
+End Sub
+
+Sub Макрос3()
+    ' Оформление текста: синий цвет, двойное красное подчеркивание, ВСЕ ЗАГЛАВНЫЕ
+    With Selection.Font
+        .Color = wdColorBlue
+        .Underline = wdUnderlineDouble
+        .UnderlineColor = wdColorRed
+        .AllCaps = True
+    End With
+End Sub
+
+Sub Макрос4()
+    ' Форматирование текста в маркированный список с маркером "R"
+    Dim para As Paragraph
+    For Each para In Selection.Paragraphs
+        With para.Range.ListFormat
+            .ApplyBulletDefault
+            .ListTemplate.ListLevels(1).NumberFormat = "R"
+        End With
+    Next para
+End Sub
+
+Sub Макрос5()
+    ' Оформление ячейки таблицы: заливка – голубая, цвет текста – красный
+    If Selection.Information(wdWithInTable) Then
+        With Selection.Cells(1).Shading
+            .BackgroundPatternColor = wdColorSkyBlue
+        End With
+        Selection.Font.Color = wdColorRed
+    End If
+End Sub
+
+Sub Макрос6()
+    ' Оформление ячейки таблицы: заливка – серая, граница – двойная красная
+    If Selection.Information(wdWithInTable) Then
+        With Selection.Cells(1).Shading
+            .BackgroundPatternColor = wdColorGray15
+        End With
+        With Selection.Borders(wdBorderLeft)
+            .LineStyle = wdLineStyleDouble
+            .Color = wdColorRed
+        End With
+        With Selection.Borders(wdBorderRight)
+            .LineStyle = wdLineStyleDouble
+            .Color = wdColorRed
+        End With
+        With Selection.Borders(wdBorderTop)
+            .LineStyle = wdLineStyleDouble
+            .Color = wdColorRed
+        End With
+        With Selection.Borders(wdBorderBottom)
+            .LineStyle = wdLineStyleDouble
+            .Color = wdColorRed
+        End With
+    End If
+End Sub
+
+Sub Макрос7()
+    ' Вставка рисунка и выравнивание по центру страницы
+    Dim pic As InlineShape
+    Set pic = Selection.InlineShapes.AddPicture(FileName:="C:\Путь\к\рисунку.jpg", LinkToFile:=False, SaveWithDocument:=True)
+    pic.Range.ParagraphFormat.Alignment = wdAlignParagraphCenter
+End Sub
+
+Sub Макрос8()
+    ' Установка параметров страницы и оформление текста
+    With ActiveDocument.PageSetup
+        .TopMargin = CentimetersToPoints(2.5)
+        .BottomMargin = CentimetersToPoints(2.5)
+        .LeftMargin = CentimetersToPoints(3)
+        .RightMargin = CentimetersToPoints(1.5)
+    End With
+    With Selection.Font
+        .Name = "Times New Roman"
+        .Size = 14
+    End With
+    Selection.ParagraphFormat.Alignment = wdAlignParagraphJustify
+    Selection.ParagraphFormat.LineSpacingRule = wdLineSpace1pt5
+End Sub
+
+Sub Макрос9()
+    ' Вставка таблицы 3х4 и оформление первой строки рамкой синего цвета
+    Dim tbl As Table
+    Set tbl = ActiveDocument.Tables.Add(Selection.Range, 3, 4)
+    With tbl.Rows(1).Borders
+        .InsideColor = wdColorBlue
+        .OutsideColor = wdColorBlue
+        .LineStyle = wdLineStyleSingle
+    End With
+End Sub
