@@ -2,7 +2,7 @@ qZwXeCrVtByN123
 
 https://multiurok.ru/files/risovaniie-formuly-ghipierssylka.html
 
-
+https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Ffhd.multiurok.ru%2Ff%2F0%2F8%2Ff083f5a9042da5605c174d8eed623febc3a8fd8a%2FphpU5EOPN_Zadanie-3-Risovanie-formuly-giperssylki.docx%3Frisovaniie-formuly-ghipierssylka.docx&wdOrigin=BROWSELINK
 
 Задание №5 «Рисование, формулы, гиперссылки»
 
