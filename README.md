@@ -46,3 +46,5 @@ reg add "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 10 /f
 reg add "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f
 
 Начни с пункта 1. Если там появится ошибка — пришли её текст целиком.
+
+"C:\Users\politype\AppData\Roaming\WinClockScreenSaver\ClockScreenSaver.scr" /c
