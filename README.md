@@ -61,12 +61,8 @@ reg query "HKCU\Control Panel\Desktop" /v SCRNSAVE.EXE
 
 Потом:
 
-reg query "HKCU\Control Panel\Desktop" /v ScreenSaveActive
-
-И:
-
-reg query "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut
-
-Пришли мне вывод всех трёх команд
-
-
+Проверим это одной командой:
+reg query "HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaverIsSecure
+Если увидишь значение 0x1, значит пароль после заставки принудительно включён политикой.
+Ещё одна проверка:
+reg query "HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop"
