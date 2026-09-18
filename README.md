@@ -1,18 +1,21 @@
-https://github.com/y0av/WinClockScreenSaver/releases/tag/v1.0
+Таймер:
 
-Да. Создай:
+control desk.cpl,,@screensaver
 
-C:\Users\politype\AppData\Roaming\WinClockScreenSaver\
+В cmd 
 
-и положи туда .scr.
+Цвет:
 
-Затем команды по одной строке:
+"C:\Users\politype\AppData\Roaming\WinClockScreenSaver\ClockScreenSaver.scr" /c
 
-reg add "HKCU\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d "C:\Users\politype\AppData\Roaming\WinClockScreenSaver\WinClockScreenSaver.scr" /f
+Ручной старт через win r
 
-reg add "HKCU\Control Panel\Desktop" /v ScreenSaveActive /t REG_SZ /d 1 /f
+"C:\Users\politype\AppData\Roaming\WinClockScreenSaver\ClockScreenSaver.scr" /s
 
-reg add "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f
+
+
+
+" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f
 
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
