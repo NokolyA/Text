@@ -48,3 +48,22 @@ reg add "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f
 Начни с пункта 1. Если там появится ошибка — пришли её текст целиком.
 
 "C:\Users\politype\AppData\Roaming\WinClockScreenSaver\ClockScreenSaver.scr" /c
+Понял. Тут важный момент: 120 секунд в настройках самой заставки — это не таймер запуска заставки. Это, скорее всего, параметр самой ClockScreenSaver (например, эффект/переход).
+
+Таймер запуска Windows мы задавали отдельно через ScreenSaveTimeOut. Если после 5+ минут заставка не запускается, значит Windows не использует нашу настройку автоматически — вероятно, её переопределяет политика рабочего ПК или параметр не применился.
+
+Давай проверим без гаданий. Выполни в cmd:
+
+reg query "HKCU\Control Panel\Desktop" /v SCRNSAVE.EXE
+
+Потом:
+
+reg query "HKCU\Control Panel\Desktop" /v ScreenSaveActive
+
+И:
+
+reg query "HKCU\Control Panel\Desktop" /v ScreenSaveTimeOut
+
+Пришли мне вывод всех трёх команд
+
+
