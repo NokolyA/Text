@@ -1,3 +1,6 @@
+https://shrimp.fish/sub/ERe8Jmh9STaAna9B
+
+
 kimkdir "C:\ProgramData\VSCodium\extensions"
 
 
